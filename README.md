@@ -1,4 +1,4 @@
-# 🛡️ MailMonitor (PMM)
+# 🛡️ Personal Mail Monitor (PMM)
 
 ### *Premium Email Intelligence & Infrastructure Monitoring Ecosystem*
 
