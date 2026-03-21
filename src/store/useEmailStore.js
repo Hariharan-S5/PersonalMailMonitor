@@ -1304,7 +1304,7 @@ export const useEmailStore = create((set, get) => ({
   profile: null,
   personalInfo: null,
   userPermissions: null,
-  backendUrl: 'http://localhost:3000',
+  backendUrl: 'http://localhost:3000', // TODO: Update this to your hosted backend URL (e.g., https://your-backend.onrender.com)
   preferences: {
     theme: 'light',
     accentColor: '#0ea5e9',
@@ -1642,7 +1642,7 @@ export const useEmailStore = create((set, get) => ({
       // 4. Thread Details & External Data (all tiers for overview stats)
       const [threadDetails, locationData] = await Promise.all([
         emailService.getRecentThreadDetails(accessToken, 20, `after:${Math.floor(new Date().setHours(0, 0, 0, 0) / 1000)}`),
-        fetch('http://ip-api.com/json').then(res => res.json()).catch(() => ({ city: 'Unknown', country: 'Unknown', countryCode: 'N/A' }))
+        fetch('https://ip-api.com/json').then(res => res.json()).catch(() => ({ city: 'Unknown', country: 'Unknown', countryCode: 'N/A' }))
       ]);
 
       // Custom country code mapper
