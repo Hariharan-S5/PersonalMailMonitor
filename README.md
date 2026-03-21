@@ -95,21 +95,29 @@ Ensure you have a `.env` file in the `PMM-backend/` folder (standard variables a
 
 ---
 
-## 📸 Screenshots
+## 📸 App Showcase
 
-![Main Dashboard](https://via.placeholder.com/800x450?text=MailMonitor+Dashboard+Screenshot)
-*Dashboard Overview with Glassmorphic metrics.*
+### 🔐 Multi-Auth Login
+![Login Page](/screenshots/login-page.png)
 
-![Payment checkout](https://via.placeholder.com/800x450?text=Premium+Payment+Checkout)
-*Premium SaaS Payment Checkout Flow.*
+### 📊 Main Dashboard
+![Main Dashboard](file:///c:/dev/antigravity-projects/PMM/screenshots/main-screen.png)
 
----
+### 📨 Incoming Mails
+![Incoming Mails](file:///c:/dev/antigravity-projects/PMM/screenshots/incoming-mails.png)
 
-## 🎥 Demo Video
+### 💳 Premium Checkout
+![Payment Page](file:///c:/dev/antigravity-projects/PMM/screenshots/payment-page.png)
 
-[Watch the MailMonitor Walkthrough](https://via.placeholder.com/800x450?text=Demo+Video+Placeholder)
+### 🎟️ Subscription Plans
+![Plans](file:///c:/dev/antigravity-projects/PMM/screenshots/plans.png)
 
----
+### ⚙️ System Settings
+![Settings](file:///c:/dev/antigravity-projects/PMM/screenshots/settings.png)
+
+### 🧠 Analytics & Visualization
+![Visualization](file:///c:/dev/antigravity-projects/PMM/screenshots/visualization.png)
+
 
 ## 📂 Folder Structure
 
