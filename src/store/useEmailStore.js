@@ -1304,7 +1304,7 @@ export const useEmailStore = create((set, get) => ({
   profile: null,
   personalInfo: null,
   userPermissions: null,
-  backendUrl: 'http://localhost:3000', // TODO: Update this to your hosted backend URL (e.g., https://your-backend.onrender.com)
+  backendUrl: 'https://pmm-backend-te84.onrender.com',
   preferences: {
     theme: 'light',
     accentColor: '#0ea5e9',
