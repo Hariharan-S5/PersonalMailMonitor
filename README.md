@@ -8,29 +8,29 @@ MailMonitor is a high-fidelity, real-time dashboard designed for the modern SaaS
 
 
 
-
 ## 📸 App Showcase
 
 ### 🔐 Multi-Auth Login
 ![Login Page](/screenshots/login-page.png)
 
 ### 📊 Main Dashboard
-![Main Dashboard](file:///c:/dev/antigravity-projects/PMM/screenshots/main-screen.png)
+![Main Dashboard](/screenshots/main-screen.png)
 
 ### 📨 Incoming Mails
-![Incoming Mails](file:///c:/dev/antigravity-projects/PMM/screenshots/incoming-mails.png)
+![Incoming Mails](/screenshots/incoming-mails.png)
 
 ### 💳 Premium Checkout
-![Payment Page](file:///c:/dev/antigravity-projects/PMM/screenshots/payment-page.png)
+![Payment Page](/screenshots/payment-page.png)
 
 ### 🎟️ Subscription Plans
-![Plans](file:///c:/dev/antigravity-projects/PMM/screenshots/plans.png)
+![Plans](/screenshots/plans.png)
 
 ### ⚙️ System Settings
-![Settings](file:///c:/dev/antigravity-projects/PMM/screenshots/settings.png)
+![Settings](/screenshots/settings.png)
 
 ### 🧠 Analytics & Visualization
-![Visualization](file:///c:/dev/antigravity-projects/PMM/screenshots/visualization.png)
+![Visualization](/screenshots/visualization.png)
+
 
 
 ---
