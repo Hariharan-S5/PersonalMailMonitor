@@ -6,6 +6,36 @@ MailMonitor is a high-fidelity, real-time dashboard designed for the modern SaaS
 
 ---
 
+
+
+
+## 📸 App Showcase
+
+### 🔐 Multi-Auth Login
+![Login Page](/screenshots/login-page.png)
+
+### 📊 Main Dashboard
+![Main Dashboard](file:///c:/dev/antigravity-projects/PMM/screenshots/main-screen.png)
+
+### 📨 Incoming Mails
+![Incoming Mails](file:///c:/dev/antigravity-projects/PMM/screenshots/incoming-mails.png)
+
+### 💳 Premium Checkout
+![Payment Page](file:///c:/dev/antigravity-projects/PMM/screenshots/payment-page.png)
+
+### 🎟️ Subscription Plans
+![Plans](file:///c:/dev/antigravity-projects/PMM/screenshots/plans.png)
+
+### ⚙️ System Settings
+![Settings](file:///c:/dev/antigravity-projects/PMM/screenshots/settings.png)
+
+### 🧠 Analytics & Visualization
+![Visualization](file:///c:/dev/antigravity-projects/PMM/screenshots/visualization.png)
+
+
+---
+
+
 ## ✨ Features
 
 - **💎 Premium SaaS Aesthetic**: Custom-built dark-mode UI with glassmorphism, fluid Framer Motion animations, and ambient glowing backgrounds.
@@ -92,31 +122,6 @@ Ensure you have a `.env` file in the `PMM-backend/` folder (standard variables a
 3.  **Upgrade**: Use the **Plans** page to select a "Sync Node". 
 4.  **Bypass**: Enter a **Lucky Coupon** (e.g., `ELITE@2026#STAR`) to unlock Elite features instantly.
 5.  **Explore**: Use the sidebar to switch between Business, HR, and Security analytics.
-
----
-
-## 📸 App Showcase
-
-### 🔐 Multi-Auth Login
-![Login Page](/screenshots/login-page.png)
-
-### 📊 Main Dashboard
-![Main Dashboard](file:///c:/dev/antigravity-projects/PMM/screenshots/main-screen.png)
-
-### 📨 Incoming Mails
-![Incoming Mails](file:///c:/dev/antigravity-projects/PMM/screenshots/incoming-mails.png)
-
-### 💳 Premium Checkout
-![Payment Page](file:///c:/dev/antigravity-projects/PMM/screenshots/payment-page.png)
-
-### 🎟️ Subscription Plans
-![Plans](file:///c:/dev/antigravity-projects/PMM/screenshots/plans.png)
-
-### ⚙️ System Settings
-![Settings](file:///c:/dev/antigravity-projects/PMM/screenshots/settings.png)
-
-### 🧠 Analytics & Visualization
-![Visualization](file:///c:/dev/antigravity-projects/PMM/screenshots/visualization.png)
 
 
 ## 📂 Folder Structure
