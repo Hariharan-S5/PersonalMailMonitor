@@ -3,13 +3,13 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 // TODO: Replace with your actual Firebase config from the Firebase Console
 const firebaseConfig = {
-  apiKey: "AIzaSyAdgMCiG3nrozNVJ4X0E5q4pDEMxo8eAl4",
-  authDomain: "personalmailmanitor.firebaseapp.com",
-  projectId: "personalmailmanitor",
-  storageBucket: "personalmailmanitor.firebasestorage.app",
-  messagingSenderId: "779739924715",
-  appId: "1:779739924715:web:5244f52a1d1da0e72e96ae",
-  measurementId: "G-4FYW97FQCX"
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: "",
+  measurementId: ""
 };
 
 const app = initializeApp(firebaseConfig);
