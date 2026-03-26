@@ -1,10 +1,41 @@
-# 🛡️ MailMonitor (PMM)
+# 🛡️ Personal Mail Monitor (PMM)
 
 ### *Premium Email Intelligence & Infrastructure Monitoring Ecosystem*
 
 MailMonitor is a high-fidelity, real-time dashboard designed for the modern SaaS professional. It seamlessly integrates secure Google Firebase authentication with a sophisticated glassmorphic interface to provide deep insights into your email communication, business analytics, and system architecture.
 
+[Quick look to 🛡️ Personal Mail Monitor (PMM)](https://hariharan-s5.github.io/PersonalMailMonitor/)
 ---
+
+
+
+## 📸 App Showcase
+
+### 🔐 Multi-Auth Login
+![Login Page](/screenshots/login-page.png)
+
+### 📊 Main Dashboard
+![Main Dashboard](/screenshots/main-screen.png)
+
+### 📨 Incoming Mails
+![Incoming Mails](/screenshots/incoming-mails.png)
+
+### 💳 Premium Checkout
+![Payment Page](/screenshots/payment-page.png)
+
+### 🎟️ Subscription Plans
+![Plans](/screenshots/plans.png)
+
+### ⚙️ System Settings
+![Settings](/screenshots/settings.png)
+
+### 🧠 Analytics & Visualization
+![Visualization](/screenshots/visualization.png)
+
+
+
+---
+
 
 ## ✨ Features
 
@@ -92,37 +123,6 @@ Ensure you have a `.env` file in the `PMM-backend/` folder (standard variables a
 3.  **Upgrade**: Use the **Plans** page to select a "Sync Node". 
 4.  **Bypass**: Enter a **Lucky Coupon** (e.g., `ELITE@2026#STAR`) to unlock Elite features instantly.
 5.  **Explore**: Use the sidebar to switch between Business, HR, and Security analytics.
-
----
-
-## 📸 App Showcase
-
-### 🔐 Multi-Auth Login
-![Login Page](file:///c:/dev/antigravity-projects/PMM/screenshots/login-page.png)
-
-### 📊 Main Dashboard
-![Main Dashboard](file:///c:/dev/antigravity-projects/PMM/screenshots/main-screen.png)
-
-### 📨 Incoming Mails
-![Incoming Mails](file:///c:/dev/antigravity-projects/PMM/screenshots/incoming-mails.png)
-
-### 💳 Premium Checkout
-![Payment Page](file:///c:/dev/antigravity-projects/PMM/screenshots/payment-page.png)
-
-### 🎟️ Subscription Plans
-![Plans](file:///c:/dev/antigravity-projects/PMM/screenshots/plans.png)
-
-### ⚙️ System Settings
-![Settings](file:///c:/dev/antigravity-projects/PMM/screenshots/settings.png)
-
-### 🧠 Analytics & Visualization
-![Visualization](file:///c:/dev/antigravity-projects/PMM/screenshots/visualization.png)
-
----
-
-## 🎥 Demo Video
-
-[Watch the MailMonitor Walkthrough](https://via.placeholder.com/800x450?text=Demo+Video+Placeholder)
 
 ---
 
