@@ -77,7 +77,7 @@ Follow these simple steps to get MailMonitor running on your local machine.
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/mailmonitor.git
+git clone https://github.com/Hariharan-S5/mailmonitor.git
 cd mailmonitor
 ```
 
