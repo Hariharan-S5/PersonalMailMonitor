@@ -1,0 +1,140 @@
+# 🛡️ PMM: Personal Mail Monitor - Technical Documentation (Advanced Architecture)
+
+## 🌟 Project Overview
+MailMonitor (PMM) is a sophisticated, real-time dashboard designed to provide high-fidelity intelligence on personal and business email data. The project bridges the gap between raw email communication and actionable financial/operational insights by parsing Gmail data into structured categories like Food Spend, Travel, E-commerce, and HR Pipeline metrics.
+
+### Key Value Propositions
+- **Privacy First**: No data is stored on external servers; processing is done on-the-fly or cached locally.
+- **Bifurcated Node Architecture**: A clean separation between the React-based "UI Node" and the Node.js/SQLite-based "Service Node".
+- **Premium Aesthetics**: A glassmorphic, dark-mode-first UI built with Tailwind CSS and Framer Motion.
+
+---
+
+## 📂 Folder Structure & Module breakdown
+
+### 1. Root Directory (Orchestration)
+- **`.gitignore`**: Prevents sensitive files (like `.env` or `node_modules`) from being committed to Git.
+- **`package.json`**: The manifest file for the Frontend. It defines dependencies (React, Lucid-React, Framer Motion) and scripts for building and developing.
+- **`vite.config.js`**: Orchestrates the Vite build system, ensuring fast hot-module replacement (HMR).
+- **`tailwind.config.js`**: Configures the design system, defining custom colors (Primary, Slate) and animations.
+
+### 2. `src/` (The UI Node)
+- **`App.jsx`**: The core routing and layout engine. It uses `react-router-dom` to map URLs to specific pages.
+- **`main.jsx`**: The entry point that mounts the React application to the DOM.
+- **`components/`**: 
+  - **`ArchFlow.jsx`**: Uses React Flow to visualize the system's own architecture.
+  - **`Header.jsx`**: Comprehensive navigation and user profile management.
+  - **`Sidebar.jsx`**: Dynamic navigation link generator.
+  - **`SyncStatus.jsx`**: Visual indicator of data freshness.
+- **`pages/`**:
+  - **`Dashboard.jsx`**: The command center, showing summarized KPIs.
+  - **`Overview.jsx`**: High-level statistical visualizations using Recharts.
+  - **`Personal.jsx`**: Deep-dive into lifestyle spending (Zomato, Uber, Amazon).
+  - **`BusinessAnalytics.jsx`**: Enterprise-level insights gated behind the Pro/Elite tier.
+  - **`Architecture.jsx`**: A dedicated page for visualizing system logic.
+- **`store/`**:
+  - **`useEmailStore.js`**: The central state repository using **Zustand**. This file handles data fetching, parsing, and caching.
+- **`services/`**:
+  - **`emailService.js`**: An abstraction for Google Gmail API communication.
+- **`utils/`**:
+  - **`pdfParser.js`**: Extracts financial data from email attachments.
+  - **`dateUtils.js`**: Handles complex date-range calculations for the master filters.
+  - **`networkInterceptor.js`**: Debugging tool for monitoring outgoing transitions.
+
+### 3. `PMM-backend/` (The Service Node)
+- **`app.js`**: The main Express server. It initializes CORS, JSON parsing, and standardizes port 3000 as the communication hub.
+- **`routes/userRoutes.js`**: Maps endpoints (e.g., `/getuser/permisson`, `/newuser/post`) to controller logic.
+- **`controllers/userController.js`**: The "Authorization Gate". It validates if a user should have access to Pro/Elite features.
+- **`models/userModel.js`**: The SQL query layer using `sqlite3`.
+- **`database/db.js`**: Initializes the SQLite database schema (`users` and `luck_copan` tables).
+
+---
+
+## 🛠️ Installation & Environment Setup (Beginner Friendly)
+
+### Phase 1: The Backend (The Brain)
+1. Open a terminal in `PMM-backend/`.
+2. Run `npm install` to download the Express and SQLite libraries.
+3. Run `node app.js`.
+4. **Why?** This starts the server that listens for data requests from the frontend.
+
+### Phase 2: The Frontend (The Face)
+1. Open a terminal in the root directory.
+2. Run `npm install` to download React and Tailwind.
+3. Run `npm run dev`.
+4. **Why?** This starts the development environment where you can view the dashboard in your browser.
+
+---
+
+## 🏗️ Architecture & Data Flow (How it works)
+
+### 1. The Core Flow (Gmail to UI)
+1. **Request**: The user switches to the 'Personal' page.
+2. **Fetch**: `Personal.jsx` calls `fetchEmails()` in the `useEmailStore`.
+3. **API Call**: `emailService.js` sends a request to Google's API using the user's `accessToken`.
+4. **Parsing**: The raw email list is passed through complex Regex (Regular Expression) parsers in `useEmailStore.js`. These parsers look for keywords like "Zomato", "Total Amount", or "Order Confirmed".
+5. **State Update**: The parsed totals (e.g., `foodSpend: 1500`) are updated in the store.
+6. **Reactive Render**: React sees the store update and automatically updates the charts on the screen.
+
+### 2. The Permission Flow (The Gatekeeper)
+1. When a page like 'Business Analytics' is loaded, a **RestrictedRoute** wrapper checks the `subscriptionType`.
+2. The frontend asks the Backend (`/getuser/permisson`) for the user's tier.
+3. If the user is "Basic", they are redirected to the **Plans** page.
+4. If they enter the **Lucky Coupon** `ELITE@2026#STAR`, the backend updates their record to "Elite", and the gate opens.
+
+---
+
+## 🧬 Detailed File-by-File Analysis (Technical Deep-Dive)
+
+### 🛰️ Frontend (UI Node)
+
+#### `src/store/useEmailStore.js` (The Nervous System)
+- **Function `initStore`**: Runs once on startup. It checks `localStorage` for a saved session. If found, it hydrates the UI instantly, making the app feel fast.
+- **Function `fetchEmails`**: Orchestrates the data retrieval. It uses a "Page Context" system to only fetch data relevant to the current screen, saving bandwidth and Google API quota.
+- **Logic Block (Parsing)**: Uses `processFoodInsight`, `processTravelInsight`, etc. These functions use `async/await` to handle the asynchronous nature of API requests.
+
+#### `src/components/ArchFlow.jsx` (Self-Awareness)
+- **What it does**: Renders a node-based diagram of the PMM system.
+- **Why?** It visualizes how different modules (Store, Services, Pages) interact.
+- **Design Decision**: Nodes change color and density based on the user's `subscriptionType`. "Elite" users see a more detailed "infrastructure" view.
+
+#### `src/pages/Personal.jsx` (The Spend Node)
+- **What it does**: A high-impact visualization page.
+- **Logic**: It calls `getStats()` from the store to retrieve calculated totals. It uses **Lucide-React** for premium icon representation.
+
+### ⚙️ Backend (Service Node)
+
+#### `PMM-backend/controllers/userController.js` (The Logic Hub)
+- **Function `getUserPermission`**: The primary check for access tiers.
+- **Function `getLuckUser`**: (Fixed) This function creates a new "Elite" tier record when the coupon is used. I recently patched a bug here where a new user object wasn't being correctly assigned to a variable, causing a "TypeError". Now, it correctly returns the new user profile to the frontend.
+
+#### `PMM-backend/database/db.js` (Persistence)
+- **What it does**: Uses the `sqlite` wrapper to open a connection. It creates two tables:
+  1. `users`: Stores standard paid subscriptions.
+  2. `luck_copan`: Stores users who utilized the bypass protocol.
+
+---
+
+## 🏆 Key Features Breakdown
+
+- **Real-Time Synchronization**: The `SyncStatus` component shows a "Live" pulse when the ecosystem is actively polling for data.
+- **Glassmorphic UI**: Achieved by using `backdrop-blur` and semi-transparent backgrounds in Tailwind CSS, giving it a premium "MacOS-like" feel.
+- **Interactive Analytics**: Hovering over charts reveals detailed transaction breakdowns (The "Audit Trail").
+
+---
+
+## 📦 Dependencies & Libraries
+
+- **React & Vite**: The engine for fast UI rendering.
+- **Zustand**: Lightweight alternative to Redux for global state.
+- **Framer Motion**: Handles all the smooth "fade-in" and "slide-up" animations.
+- **Lucide React**: For beautiful, consistent iconography.
+- **Express & SQLite3**: For a lightweight, zero-configuration backend.
+- **Firebase Auth**: Industry standard for secure Google logins.
+
+---
+
+## 🏁 Conclusion
+MailMonitor is built with a clear separation of concerns, making it beginner-friendly for developers to explore while offering professional-grade architecture (Zustand + Express + SQLite). The system's strength lies in its **Reactive Data Loop**, where email data is transformed into a beautiful visual narrative without compromising security.
+
+*End of Documentation*
