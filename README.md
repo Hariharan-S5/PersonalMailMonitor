@@ -4,7 +4,8 @@
 
 MailMonitor is a high-fidelity, real-time dashboard designed for the modern SaaS professional. It seamlessly integrates secure Google Firebase authentication with a sophisticated glassmorphic interface to provide deep insights into your email communication, business analytics, and system architecture.
 
-[![Live Demo](https://img.shields.io/badge/🚀%20Live-Demo-blue?style=for-the-badge)](https://hariharan-s5.github.io/PersonalMailMonitor/)
+🌐 **Live Demo:**  
+👉 https://hariharan-s5.github.io/PersonalMailMonitor/
 ---
 
 
